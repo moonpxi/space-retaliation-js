@@ -11,14 +11,17 @@ window.onload = function() {
 }
 
 function GameLoop(drawer, fps) {
-  var x = 0;
+  var spaceship = new Spaceship({ x: 10, y: 10}, { width: 200, height: 50});
+  spaceship.position.x += 30;
 
   this.update = function() {};
 
   this.draw = function() {
     drawer.clear();
-    drawer.drawRect("#FF0000", x, 10, 100, 200);
-    x += 1;
+    drawer.drawRect("#FF0000", spaceship.position.x, 
+                               spaceship.position.y,
+                               spaceship.dimension.width,
+                               spaceship.dimension.height);
   };
 
   setInterval(function() {
