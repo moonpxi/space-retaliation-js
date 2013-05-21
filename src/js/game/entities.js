@@ -13,3 +13,9 @@ var Entity = function(spec) {
 
   return that;
 };
+
+var Spaceship = function(spec) {
+  var that = Entity(spec);
+
+  return that;
+}

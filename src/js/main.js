@@ -11,7 +11,7 @@ window.onload = function() {
 }
 
 function GameLoop(drawer, fps) {
-  var spaceship = new Entity({ x: 10, y: 10, width: 200, height: 50});
+  var spaceship = new Spaceship({ x: 10, y: 10, width: 200, height: 50});
   spaceship.x += 30;
 
   this.update = function() {};
