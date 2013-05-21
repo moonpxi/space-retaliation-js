@@ -1,6 +1,8 @@
 var Entity = function(spec) {
-  this.x = spec.x;
-  this.y = spec.y;
-  this.width = spec.width;
-  this.height = spec.height;
+  var that = {}
+  that.x = spec.x;
+  that.y = spec.y;
+  that.width = spec.width;
+  that.height = spec.height;
+  return that;
 };
