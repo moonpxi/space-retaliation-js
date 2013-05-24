@@ -1,13 +1,14 @@
 var GameScreen = function() {
-  var spaceship = new Spaceship({ x: 10, y: 10, width: 200, height: 50});
-  spaceship.x += 30;
+  var spaceship = new Spaceship({ x: 10, y: 10, width: 200, height: 50}),
+      player = new Player(spaceship);
 
-  this.update = function() { };
+  this.update = function() {
+  };
 
   this.draw = function(drawer) {
-    drawer.drawRect("#FF0000", spaceship.x, 
-                               spaceship.y,
-                               spaceship.width,
-                               spaceship.height);
+    drawer.drawRect("#FF0000", player.spaceship.x, 
+                               player.spaceship.y,
+                               player.spaceship.width,
+                               player.spaceship.height);
   };
 }
