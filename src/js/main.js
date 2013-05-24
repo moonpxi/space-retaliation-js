@@ -7,21 +7,18 @@ window.onload = function() {
       context = canvas.getContext("2d")
       drawer = new Drawer(canvas, context);
   
-  GameLoop(drawer, Config.FPS);
+  GameLoop(drawer, Config.FPS, new GameScreen());
 }
 
-function GameLoop(drawer, fps) {
-  var spaceship = new Spaceship({ x: 10, y: 10, width: 200, height: 50});
-  spaceship.x += 30;
+function GameLoop(drawer, fps, screen) {
 
-  this.update = function() {};
+  this.update = function() {
+    screen.update();
+  };
 
   this.draw = function() {
     drawer.clear();
-    drawer.drawRect("#FF0000", spaceship.x, 
-                               spaceship.y,
-                               spaceship.width,
-                               spaceship.height);
+    screen.draw(drawer);
   };
 
   setInterval(function() {
