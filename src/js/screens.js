@@ -2,7 +2,8 @@ var GameScreen = function() {
   var level = new Level();
 
   this.update = function() {
-    level.player.act("left");
+    level.update(Logic.playerControls,
+                 Logic.playerControls);
   };
 
   this.draw = function(drawer) {
