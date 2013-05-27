@@ -5,15 +5,16 @@ var Config = {
 window.onload = function() {
   var canvas = document.getElementById("game"),
       context = canvas.getContext("2d")
-      drawer = new Drawer(canvas, context);
+      drawer = new Drawer(canvas, context),
+      input = new Input(window);
   
-  GameLoop(drawer, Config.FPS, new GameScreen());
+  GameLoop(input, drawer, Config.FPS, new GameScreen());
 }
 
-function GameLoop(drawer, fps, screen) {
+function GameLoop(input, drawer, fps, screen) {
 
   this.update = function() {
-    screen.update();
+    screen.update(input);
   };
 
   this.draw = function() {

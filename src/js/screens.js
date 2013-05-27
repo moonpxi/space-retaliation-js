@@ -1,7 +1,9 @@
 var GameScreen = function() {
   var level = new Level();
 
-  this.update = function() {
+  this.update = function(input) {
+    console.log(input.keys);
+
     level.update(Logic.playerControls);
   };
 
